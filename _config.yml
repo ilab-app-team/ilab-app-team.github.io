@@ -1,0 +1,4 @@
+# GitHub Pages の設定
+# README は公開ページに含めない（_ で始まるフォルダはもともと公開されない）
+exclude:
+  - README.md

@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>事前登録｜iLab（アイラボ）理系学生だけのコミュニティアプリ</title>
+<meta name="description" content="iLabの事前登録ページ。1〜2分で完了します。事前登録特典として、リリース後に iLab Plus を1週間無料でお使いいただけます。">
+<meta property="og:title" content="iLab 事前登録｜理系の可能性を広げる、iLab">
+<meta property="og:description" content="理系学生だけのコミュニティアプリ。事前登録で iLab Plus 1週間無料。">
+<meta property="og:type" content="website">
+<!-- 公開したら、URLを「https://(ドメイン)/assets/ogp.png」の形に書き換える -->
+<meta property="og:image" content="assets/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/il-icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=IBM+Plex+Mono&family=Inter:wght@800&family=Noto+Sans+JP:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #17202f;
+    --ink-soft: #4a5466;
+    --muted: #636e80;
+    --line: #e1e6ee;
+    --tint: #f4f7fb;
+    --sky: #2a86d9;
+    --sky-text: #1d6bb5;
+    --sky-soft: #eaf3fc;
+    --lv-text: #6a55f0;
+    --lv-soft: #f1eefe;
+    --danger: #c0392b;
+    --amber-soft: #fdf3e1;
+    --grad-cm: linear-gradient(150deg, #3ec5f0 0%, #2f6bff 110%);
+    --grad-lv: linear-gradient(150deg, #8e7cff 0%, #b07cff 55%, #ff7eb3 120%);
+    --grad-btn: linear-gradient(120deg, #1a73c4 0%, #2f55d4 100%);
+    --font: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    --font-num: "Inter", "Noto Sans JP", sans-serif;
+    --font-serif: "Cormorant Garamond", Georgia, serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    color-scheme: light;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; background: var(--tint); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.8; letter-spacing: .03em; -webkit-font-smoothing: antialiased; }
+  a { color: var(--sky-text); }
+  .nb { display: inline-block; }
+  [hidden] { display: none !important; }
+
+  /* ヘッダー */
+  .header { background: rgba(255,255,255,.95); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; }
+  .header .in { max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+  .brand svg { width: 34px; height: 34px; }
+  .brand b { font-family: var(--font-num); font-size: 20px; font-weight: 800; letter-spacing: 0; }
+  .back { font-size: 15px; font-weight: 700; text-decoration: none; }
+
+  .wrap { max-width: 720px; margin: 0 auto; padding: clamp(40px, 7vw, 72px) 16px 80px; }
+  .head { text-align: center; }
+  .kicker { font-family: var(--font-mono); font-size: 14px; letter-spacing: .18em; color: var(--sky-text); text-transform: uppercase; }
+  h1 { margin: 8px 0 0; font-size: clamp(30px, 5vw, 44px); font-weight: 800; line-height: 1.35; }
+  .lead { margin: 14px auto 0; max-width: 34em; color: var(--ink-soft); font-size: 17px; }
+  .perk { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; padding: 7px 16px; border-radius: 999px; background: var(--amber-soft); border: 1px solid #f0d49b; color: #8a5a0e; font-size: 15px; font-weight: 700; }
+  .perk b { color: #6e4500; }
+
+  .demo-note { margin: 28px 0 0; padding: 12px 16px; border-radius: 12px; background: #fff7e6; border: 1px dashed #e9a93a; color: #7a4f00; font-size: 14px; }
+
+  /* フォーム */
+  .card { margin-top: 28px; background: #fff; border-radius: 24px; border: 1px solid var(--line); padding: clamp(24px, 5vw, 44px); box-shadow: 0 24px 50px -36px rgba(23,32,47,.4); }
+  .steps { display: flex; justify-content: space-between; gap: 8px; margin: 0 0 28px; padding: 0; list-style: none; font-size: 13px; color: var(--muted); }
+  .steps li { flex: 1; text-align: center; padding-top: 10px; border-top: 3px solid var(--line); }
+  .steps li.on { color: var(--sky-text); border-top-color: var(--sky); font-weight: 700; }
+
+  .field { margin-bottom: 26px; }
+  .field > label, .field > .legend { display: flex; align-items: center; gap: 8px; font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+  .req, .opt { font-size: 11.5px; font-weight: 700; padding: 1px 8px; border-radius: 6px; letter-spacing: .04em; }
+  .req { background: #fde9e7; color: var(--danger); }
+  .opt { background: var(--tint); color: var(--muted); }
+  .hint { margin: 6px 0 0; font-size: 14px; color: var(--muted); }
+  input[type="email"], input[type="text"], select {
+    width: 100%; font: inherit; font-size: 16px; padding: 13px 14px; border-radius: 12px;
+    border: 1.5px solid #cfd7e3; background: #fff; color: var(--ink); transition: border-color .2s, box-shadow .2s;
+  }
+  select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 20px) 55%, calc(100% - 14px) 55%; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 40px; }
+  input:focus, select:focus { outline: none; border-color: var(--sky); box-shadow: 0 0 0 4px rgba(42,134,217,.18); }
+  .field.invalid input, .field.invalid select, .field.invalid .choices { border-color: var(--danger); }
+  .err { display: none; margin: 6px 0 0; font-size: 14px; font-weight: 700; color: var(--danger); }
+  .field.invalid .err { display: block; }
+
+  .choices { display: grid; gap: 8px; border: 1.5px solid transparent; border-radius: 14px; }
+  .choice { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-radius: 12px; border: 1.5px solid #cfd7e3; cursor: pointer; font-size: 16px; transition: border-color .2s, background .2s; }
+  .choice input { width: 20px; height: 20px; margin: 3px 0 0; accent-color: #1a73c4; flex: none; }
+  .choice:has(input:checked) { border-color: var(--sky); background: var(--sky-soft); }
+  .choice small { display: block; font-size: 13.5px; color: var(--muted); }
+  .choice .soon { font-size: 11.5px; font-weight: 700; padding: 1px 8px; border-radius: 999px; background: var(--lv-soft); color: var(--lv-text); margin-left: 6px; }
+  .choice:has(input:focus-visible) { box-shadow: 0 0 0 4px rgba(42,134,217,.25); }
+
+  .agree { margin-top: 8px; padding: 18px; border-radius: 16px; background: var(--tint); }
+  .agree .choice { background: #fff; }
+  .agree .choice:has(input:checked) { background: var(--sky-soft); }
+
+  .submit { margin-top: 28px; width: 100%; display: inline-flex; justify-content: center; align-items: center; gap: 10px; padding: 19px 24px; border: 0; border-radius: 999px; background: var(--grad-btn); color: #fff; font: inherit; font-size: 18px; font-weight: 800; letter-spacing: .06em; cursor: pointer; box-shadow: 0 18px 36px -16px rgba(42,134,217,.8); }
+  .submit:disabled { opacity: .6; cursor: wait; }
+  .submit:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+  .after { margin: 14px 0 0; text-align: center; font-size: 13.5px; color: var(--muted); }
+
+  /* 送信後 */
+  .done { text-align: center; }
+  .done .check { width: 76px; height: 76px; margin: 0 auto 12px; border-radius: 50%; background: var(--grad-cm); display: grid; place-items: center; color: #fff; font-size: 38px; box-shadow: 0 18px 36px -16px rgba(47,107,255,.8); }
+  .done h2 { margin: 6px 0 0; font-size: clamp(26px, 4vw, 34px); font-weight: 800; line-height: 1.4; }
+  .done p { color: var(--ink-soft); font-size: 17px; }
+  .next { margin-top: 26px; display: grid; gap: 12px; text-align: left; }
+  .next a { display: flex; align-items: center; gap: 14px; padding: 18px 20px; border-radius: 16px; border: 1.5px solid var(--line); text-decoration: none; color: var(--ink); background: #fff; }
+  .next a:hover { border-color: var(--sky); }
+  .next .tag { flex: none; font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; color: #fff; padding: 3px 9px; border-radius: 6px; background: var(--grad-lv); }
+  .next .tag.cm { background: var(--grad-cm); }
+  .next b { display: block; font-size: 17px; }
+  .next span span { font-size: 14px; color: var(--muted); }
+
+  .u18 { margin: 28px 0 0; text-align: center; font-size: 15px; color: var(--ink-soft); }
+  .u18 b { color: var(--ink); }
+  .footer { text-align: center; font-family: var(--font-mono); font-size: 12px; color: var(--muted); padding: 0 16px 40px; }
+  .footer a { color: var(--muted); margin: 0 8px; font-family: var(--font); font-size: 13px; }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  @media (max-width: 520px) { .steps { font-size: 11.5px; } .choice { padding: 12px 14px; } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><clipPath id="il-clip"><rect width="100" height="100" rx="22.5"/></clipPath></defs>
+  <symbol id="il" viewBox="0 0 100 100">
+    <g clip-path="url(#il-clip)">
+      <rect width="100" height="100" fill="#FFFFFF"/>
+      <text x="50" y="70" font-family="Cormorant Garamond,Georgia,serif" font-weight="700" font-size="58" fill="#2A86D9" text-anchor="middle" letter-spacing="-.5">iL</text>
+    </g>
+    <rect x=".75" y=".75" width="98.5" height="98.5" rx="22" fill="none" stroke="#E2E8F0" stroke-width="1.5"/>
+  </symbol>
+</svg>
+
+<header class="header">
+  <div class="in">
+    <a class="brand" href="index.html" aria-label="iLab トップへ"><svg><use href="#il"/></svg><b>iLab</b></a>
+    <a class="back" href="index.html">← トップへ戻る</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="head">
+    <span class="kicker">Pre-registration</span>
+    <h1><span class="nb">iLabに</span><span class="nb">事前登録する</span></h1>
+    <p class="lead">1〜2分で完了します。リリースが決まったら、登録したメールアドレスにお知らせします。</p>
+    <span class="perk">事前登録特典　<b>iLab Plus 1週間無料</b></span>
+  </div>
+
+  <p class="demo-note" id="demoNote" hidden>テスト表示：送信先（Googleフォーム）がまだ設定されていないため、送信しても登録は記録されません。</p>
+
+  <!-- 入力画面 -->
+  <form class="card" id="regForm" novalidate>
+    <ol class="steps" aria-hidden="true"><li class="on">入力</li><li>送信</li><li>完了</li></ol>
+
+    <div class="field" data-name="email">
+      <label for="email">メールアドレス <span class="req">必須</span></label>
+      <input type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="example@mail.com" required>
+      <p class="hint">リリースのお知らせと特典のご案内に使います。大学のメールアドレスでなくても大丈夫です。</p>
+      <p class="err">メールアドレスを正しく入力してください。</p>
+    </div>
+
+    <div class="field" data-name="grade">
+      <label for="grade">学年 <span class="req">必須</span></label>
+      <select id="grade" name="grade" required>
+        <option value="">選択してください</option>
+        <optgroup label="専門学校"><option>専門1年</option><option>専門2年</option><option>専門3年</option><option>専門4年</option></optgroup>
+        <optgroup label="大学（学部）"><option>学部1年</option><option>学部2年</option><option>学部3年</option><option>学部4年</option><option>学部5年</option><option>学部6年</option></optgroup>
+        <optgroup label="大学院"><option>修士1年</option><option>修士2年</option><option>博士1年</option><option>博士2年</option><option>博士3年</option><option>博士4年</option></optgroup>
+        <option>その他</option>
+      </select>
+      <p class="err">学年を選んでください。</p>
+    </div>
+
+    <div class="field" data-name="field">
+      <label for="field">専攻の分野 <span class="req">必須</span></label>
+      <select id="field" name="field" required>
+        <option value="">選択してください</option>
+        <option>理学</option><option>工学</option><option>情報</option><option>農学・獣医・水産</option><option>医学・歯学</option><option>薬学</option><option>看護・保健・医療技術</option><option>環境・生命科学</option><option>その他</option>
+      </select>
+      <p class="err">分野を選んでください。</p>
+    </div>
+
+    <div class="field" data-name="school">
+      <label for="school">大学・学校名 <span class="opt">任意</span></label>
+      <input type="text" id="school" name="school" autocomplete="organization" placeholder="例：○○大学">
+      <p class="hint">どの大学の学生に関心を持ってもらえているかを知るために使います。ほかの人に公開されることはありません。</p>
+    </div>
+
+    <fieldset class="field" data-name="interest" style="border:0;padding:0;margin:0 0 26px">
+      <legend class="legend">使ってみたい機能 <span class="opt">任意・複数選択可</span></legend>
+      <div class="choices">
+        <label class="choice"><input type="checkbox" name="interest" value="コミュニティ機能"><span>コミュニティ機能<small>大学をこえて、理系の仲間とつながる</small></span></label>
+        <label class="choice"><input type="checkbox" name="interest" value="恋愛機能"><span>恋愛機能<span class="soon">追加予定</span><small>同じ目線の相手と、恋をはじめる</small></span></label>
+      </div>
+    </fieldset>
+
+    <div class="field" data-name="source">
+      <label for="source">iLabを知ったきっかけ <span class="opt">任意</span></label>
+      <select id="source" name="source">
+        <option value="">選択してください</option>
+        <option>X（旧Twitter）</option><option>Instagram</option><option>TikTok</option><option>友達・知り合いから</option><option>大学内のポスター・チラシ</option><option>検索</option><option>その他</option>
+      </select>
+    </div>
+
+    <div class="agree">
+      <fieldset class="field" data-name="age" style="border:0;padding:0;margin:0 0 12px">
+        <legend class="legend" style="margin-bottom:8px">確認事項 <span class="req">必須</span></legend>
+        <div class="choices">
+          <label class="choice"><input type="checkbox" name="age" value="確認済み" required><span>18歳以上で、高校生ではありません</span></label>
+        </div>
+        <p class="err">18歳以上（高校生を除く）の方のみご登録いただけます。</p>
+      </fieldset>
+      <div class="field" data-name="privacy" style="margin:0">
+        <div class="choices">
+          <label class="choice"><input type="checkbox" name="privacy" value="同意する" required><span><a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>と<a href="terms.html" target="_blank" rel="noopener">利用規約</a>に同意します</span></label>
+        </div>
+        <p class="err">プライバシーポリシーと利用規約への同意が必要です。</p>
+      </div>
+    </div>
+
+    <button class="submit" type="submit" id="submitBtn">無料で事前登録する <span aria-hidden="true">→</span></button>
+    <p class="after">登録した情報は、リリースのお知らせとサービス改善のための分析にのみ使用します。</p>
+  </form>
+
+  <!-- 完了画面 -->
+  <section class="card done" id="done" hidden tabindex="-1" aria-live="polite">
+    <ol class="steps" aria-hidden="true"><li>入力</li><li>送信</li><li class="on">完了</li></ol>
+    <div class="check" aria-hidden="true">✓</div>
+    <h2><span class="nb">事前登録が</span><span class="nb">完了しました</span></h2>
+    <p>ご登録ありがとうございます。リリースが決まったら、メールでお知らせします。<br>特典の <b>iLab Plus 1週間無料</b> も、そのときにご案内します。</p>
+    <div class="next">
+      <a class="js-survey-link" href="index.html#survey"><span class="tag">SURVEY</span><span><b>アンケートにも協力する</b><span>理系学生の「出会い・つながり」について。約3〜5分</span></span></a>
+      <a href="#" data-sns="instagram"><span class="tag cm">FOLLOW</span><span><b>Instagramで最新情報をチェック</b><span>開発の様子やリリース情報を発信していきます</span></span></a>
+      <a href="index.html"><span class="tag cm">TOP</span><span><b>トップページに戻る</b><span>iLabでできることをもう一度見る</span></span></a>
+    </div>
+  </section>
+
+  <p class="u18">※ <b><span class="nb">18歳未満・高校生の方は</span><span class="nb">ご登録いただけません。</span></b></p>
+</main>
+
+<footer class="footer">
+  <p><a href="terms.html">利用規約</a><a href="privacy.html">プライバシーポリシー</a><a href="index.html#story">運営者情報</a><a href="#" data-contact>お問い合わせ</a><a href="#" data-sns="instagram">Instagram</a><a href="#" data-sns="x">X（旧Twitter）</a></p>
+  <p>© 2026 iLab Team. All rights reserved.</p>
+</footer>
+
+<script src="assets/config.js"></script>
+<script>
+  /* ===== Googleフォームとの接続設定 =====
+     1. チーム用アカウントで、下の項目と同じ質問のGoogleフォームを作る
+     2. フォームの「︙」→「事前入力したURLを取得」で各質問に仮の値を入れ、リンクをコピー
+     3. そのリンクに出てくる「entry.123456789」の番号を、下の ENTRY に書き写す
+     4. FORM_ACTION に「https://docs.google.com/forms/d/e/(フォームID)/formResponse」を入れる
+     ※ 設定が空のあいだは、送信しても記録されない「テスト表示」になります */
+  const FORM_ACTION = "";
+  const ENTRY = {
+    email: "",     // メールアドレス
+    grade: "",     // 学年
+    field: "",     // 専攻の分野
+    school: "",    // 大学・学校名
+    interest: "",  // 使ってみたい機能（チェックボックス）
+    source: "",    // 知ったきっかけ
+    age: "",       // 18歳以上の確認
+    privacy: "",   // プライバシーポリシーへの同意
+  };
+  // アンケートのURLは assets/config.js で設定する
+  const SURVEY_URL = (window.ILAB_CONFIG || {}).surveyUrl || "";
+
+  const configured = FORM_ACTION && Object.values(ENTRY).every(Boolean);
+  document.getElementById("demoNote").hidden = configured;
+  if (SURVEY_URL) document.querySelectorAll(".js-survey-link").forEach((a) => { a.href = SURVEY_URL; a.target = "_blank"; a.rel = "noopener"; });
+
+  const form = document.getElementById("regForm");
+  const done = document.getElementById("done");
+  const btn = document.getElementById("submitBtn");
+
+  // 入力チェック（エラーは項目のすぐ下に表示）
+  const checks = {
+    email: () => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.value.trim()),
+    grade: () => !!form.grade.value,
+    field: () => !!form.field.value,
+    age: () => form.age.checked,
+    privacy: () => form.privacy.checked,
+  };
+  const validate = (name) => {
+    const ok = checks[name]();
+    form.querySelector(`[data-name="${name}"]`).classList.toggle("invalid", !ok);
+    return ok;
+  };
+  Object.keys(checks).forEach((name) => {
+    const el = form.elements[name];
+    el.addEventListener(el.type === "checkbox" ? "change" : "blur", () => {
+      if (form.querySelector(`[data-name="${name}"]`).classList.contains("invalid") || el.type !== "checkbox") validate(name);
+    });
+  });
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const results = Object.keys(checks).map(validate);
+    if (results.includes(false)) {
+      form.querySelector(".invalid input, .invalid select")?.focus();
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = "送信中…";
+
+    if (configured) {
+      const data = new FormData();
+      data.append(ENTRY.email, form.email.value.trim());
+      data.append(ENTRY.grade, form.grade.value);
+      data.append(ENTRY.field, form.field.value);
+      data.append(ENTRY.school, form.school.value.trim());
+      form.querySelectorAll('input[name="interest"]:checked').forEach((c) => data.append(ENTRY.interest, c.value));
+      data.append(ENTRY.source, form.source.value);
+      data.append(ENTRY.age, form.age.value);
+      data.append(ENTRY.privacy, form.privacy.value);
+      try {
+        // Googleフォームは返事を読めない送り方（no-cors）しかできないため、送れたかどうかは通信エラーの有無で判断する
+        await fetch(FORM_ACTION, { method: "POST", mode: "no-cors", body: data });
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = "無料で事前登録する →";
+        alert("送信できませんでした。通信環境を確認して、もう一度お試しください。");
+        return;
+      }
+    }
+
+    form.hidden = true;
+    done.hidden = false;
+    done.focus();
+    scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+</body>
+</html>

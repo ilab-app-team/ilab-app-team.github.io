@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="1024" height="1024">
+  <!-- iLab app icon, tentative: 10-E (Sky, "iL" only, white background). Outline the text before final export. -->
+  <defs><clipPath id="r"><rect width="100" height="100" rx="22.5"/></clipPath></defs>
+  <g clip-path="url(#r)">
+    <rect width="100" height="100" fill="#FFFFFF"/>
+    <text x="50" y="70" font-family="Cormorant Garamond,Georgia,serif" font-weight="700" font-size="58" fill="#2A86D9" text-anchor="middle" letter-spacing="-.5">iL</text>
+  </g>
+</svg>
