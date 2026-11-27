@@ -256,16 +256,16 @@
      3. そのリンクに出てくる「entry.123456789」の番号を、下の ENTRY に書き写す
      4. FORM_ACTION に「https://docs.google.com/forms/d/e/(フォームID)/formResponse」を入れる
      ※ 設定が空のあいだは、送信しても記録されない「テスト表示」になります */
-  const FORM_ACTION = "";
+  const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSfW02vxTwM9B8-qQgXdHIRmMSBA3WCpffxfOUpfn5j3DgFlfA/formResponse";
   const ENTRY = {
-    email: "",     // メールアドレス
-    grade: "",     // 学年
-    field: "",     // 専攻の分野
-    school: "",    // 大学・学校名
-    interest: "",  // 使ってみたい機能（チェックボックス）
-    source: "",    // 知ったきっかけ
-    age: "",       // 18歳以上の確認
-    privacy: "",   // プライバシーポリシーへの同意
+    email: "entry.581757049",     // メールアドレス
+    grade: "entry.892016467",     // 学年
+    field: "entry.1359049236",    // 専攻の分野
+    school: "entry.1579624884",   // 大学・学校名
+    interest: "entry.1587131321", // 使ってみたい機能（チェックボックス）
+    source: "entry.229612772",    // 知ったきっかけ
+    age: "entry.898108581",       // 18歳以上の確認
+    privacy: "entry.1896416101",  // プライバシーポリシーへの同意
   };
   // アンケートのURLは assets/config.js で設定する
   const SURVEY_URL = (window.ILAB_CONFIG || {}).surveyUrl || "";
@@ -313,9 +313,10 @@
       data.append(ENTRY.email, form.email.value.trim());
       data.append(ENTRY.grade, form.grade.value);
       data.append(ENTRY.field, form.field.value);
-      data.append(ENTRY.school, form.school.value.trim());
+      // 任意の項目は、入力があるときだけ送る
+      if (form.school.value.trim()) data.append(ENTRY.school, form.school.value.trim());
       form.querySelectorAll('input[name="interest"]:checked').forEach((c) => data.append(ENTRY.interest, c.value));
-      data.append(ENTRY.source, form.source.value);
+      if (form.source.value) data.append(ENTRY.source, form.source.value);
       data.append(ENTRY.age, form.age.value);
       data.append(ENTRY.privacy, form.privacy.value);
       try {
