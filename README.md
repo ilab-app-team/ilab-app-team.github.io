@@ -38,10 +38,12 @@ surveyUrl: "https://…",   // アンケート（Google フォーム）のURL
 - [x] アンケートをチーム用アカウントで作り直し、`surveyUrl` を差し替える
 - [x] お問い合わせフォームを作り、`contact` に入れる
 - [ ] 利用規約・プライバシーポリシーを専門家に確認してもらう
-- [ ] 公開するURLを決め、`index.html` と `register.html` の `og:image` を完全なURL（`https://…/assets/ogp.png`）に書き換える
+- [x] 公開するURLを決め、`index.html` と `register.html` の `og:image` を完全なURL（`https://…/assets/ogp.png`）に書き換える
 - [ ] 全体の文章をチームで最終確認する
 
 ## 公開のしかた（GitHub Pages）
+
+公開URL：**https://ilab-app-team.github.io/**（リポジトリ名 `ilab-app-team.github.io`、公開リポジトリ）
 
 1. GitHub のリポジトリの「Settings」→「Pages」を開く
 2. 「Branch」で `main` と `/ (root)` を選んで保存する
