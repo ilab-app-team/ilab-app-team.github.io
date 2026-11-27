@@ -12,7 +12,7 @@ window.ILAB_CONFIG = {
   contact: "",
 
   // 理系学生の「出会い・つながり」アンケート（Googleフォーム）のURL
-  surveyUrl: "https://docs.google.com/forms/d/e/1FAIpQLScBKAJCy-lCfHEe-plJQXK5oohAzc9PVWhqapmaUQPfVAl1vA/viewform",
+  surveyUrl: "https://docs.google.com/forms/d/e/1FAIpQLSecyi0dE8OrRUZEzaKEHZZYWfbcuwFEV4F-uixOLId8SYLmlg/viewform",
 };
 
 // SNS のリンク（data-sns="instagram" などを付けたリンク）に URL を入れる。未設定のものは隠す
