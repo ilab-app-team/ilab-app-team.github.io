@@ -211,9 +211,9 @@
       <fieldset class="field" data-name="age" style="border:0;padding:0;margin:0 0 12px">
         <legend class="legend" style="margin-bottom:8px">確認事項 <span class="req">必須</span></legend>
         <div class="choices">
-          <label class="choice"><input type="checkbox" name="age" value="確認済み" required><span>18歳以上で、高校生ではありません</span></label>
+          <label class="choice"><input type="checkbox" name="age" value="確認済み" required><span>高校生ではありません（18歳未満の場合は、保護者の同意を得ています）</span></label>
         </div>
-        <p class="err">18歳以上（高校生を除く）の方のみご登録いただけます。</p>
+        <p class="err">高校生の方はご登録いただけません。18歳未満の方は保護者の同意が必要です。</p>
       </fieldset>
       <div class="field" data-name="privacy" style="margin:0">
         <div class="choices">
@@ -240,7 +240,7 @@
     </div>
   </section>
 
-  <p class="u18">※ <b><span class="nb">18歳未満・高校生の方は</span><span class="nb">ご登録いただけません。</span></b></p>
+  <p class="u18">※ <b><span class="nb">高校生の方は</span><span class="nb">ご登録いただけません。</span></b>18歳未満の方は、保護者の同意を得てご登録ください。</p>
 </main>
 
 <footer class="footer">
@@ -264,7 +264,7 @@
     school: "entry.1579624884",   // 大学・学校名
     interest: "entry.1587131321", // 使ってみたい機能（チェックボックス）
     source: "entry.229612772",    // 知ったきっかけ
-    age: "entry.898108581",       // 18歳以上の確認
+    age: "entry.898108581",       // 確認事項（高校生ではない／18歳未満は保護者の同意）
     privacy: "entry.1896416101",  // プライバシーポリシーへの同意
   };
   // アンケートのURLは assets/config.js で設定する
