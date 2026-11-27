@@ -34,9 +34,9 @@ surveyUrl: "https://…",   // アンケート（Google フォーム）のURL
 
 ## 公開前のチェックリスト
 
-- [ ] 事前登録フォーム（Google フォーム）を作り、`register.html` につなぐ
-- [ ] アンケートをチーム用アカウントで作り直し、`surveyUrl` を差し替える
-- [ ] お問い合わせフォームを作り、`contact` に入れる
+- [x] 事前登録フォーム（Google フォーム）を作り、`register.html` につなぐ
+- [x] アンケートをチーム用アカウントで作り直し、`surveyUrl` を差し替える
+- [x] お問い合わせフォームを作り、`contact` に入れる
 - [ ] 利用規約・プライバシーポリシーを専門家に確認してもらう
 - [ ] 公開するURLを決め、`index.html` と `register.html` の `og:image` を完全なURL（`https://…/assets/ogp.png`）に書き換える
 - [ ] 全体の文章をチームで最終確認する
