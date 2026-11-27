@@ -9,7 +9,7 @@ window.ILAB_CONFIG = {
 
   // お問い合わせ先。お問い合わせ用フォームのURL か メールアドレス のどちらかを入れる
   // 空のあいだは、お問い合わせのリンクは隠れ、規約などには「準備中」と表示されます
-  contact: "",
+  contact: "https://docs.google.com/forms/d/e/1FAIpQLSehlYi3_fJ6hO7jfRVzJiGnQT7dcGhsNkWA0Ma0ZBRP0yzN2g/viewform",
 
   // 理系学生の「出会い・つながり」アンケート（Googleフォーム）のURL
   surveyUrl: "https://docs.google.com/forms/d/e/1FAIpQLSecyi0dE8OrRUZEzaKEHZZYWfbcuwFEV4F-uixOLId8SYLmlg/viewform",
